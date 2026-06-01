@@ -17,6 +17,7 @@ import {
   ContainerScroll,
 } from "@/components/blocks/hero-gallery-scroll-animation";
 import { TestimonialCarousel } from "@/components/ui/profile-card-testimonial-carousel";
+import { Preloader } from "@/components/ui/preloader";
 
 export const Route = createRoute({
   getParentRoute: () => rootRoute,
@@ -62,20 +63,27 @@ function Reveal({
 }
 
 function Index() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Nav />
-      <Hero />
-      <Marquee />
-      <About />
-      <Services />
-      <Journey />
-      <Portfolio />
-      <Process />
-      <Booking />
-      <Testimonials />
-      <Footer />
-    </div>
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+      <div className="min-h-screen bg-background text-foreground">
+        <Nav />
+        <Hero />
+        <Marquee />
+        <About />
+        <Services />
+        <Journey />
+        <Portfolio />
+        <Process />
+        <Booking />
+        <Testimonials />
+        <Footer />
+      </div>
+    </>
   );
 }
 
