@@ -134,9 +134,9 @@ function Nav() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 relative z-50">
-        <a href="#top" className="font-display text-xl tracking-tight">
+        <motion.a href="#top" layoutId="logo-transition" className="font-display text-xl tracking-tight inline-block">
           Paperie<span className="text-accent font-sans font-bold">.</span>by V
-        </a>
+        </motion.a>
 
         {/* Desktop Links */}
         <ul className="hidden items-center gap-9 text-sm text-foreground/80 md:flex">

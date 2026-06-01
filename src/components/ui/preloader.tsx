@@ -172,10 +172,9 @@ export function Preloader({ onComplete }: PreloaderProps) {
                   className="font-display text-3xl md:text-4xl font-medium tracking-tight text-[oklch(0.97_0.012_80)]"
                 >
                   {index === items.length - 1 ? (
-                    <span>
-                      {items[index].word}
-                      <span className="text-accent font-sans font-bold text-2xl ml-0.5 animate-pulse">.</span>
-                    </span>
+                    <motion.span layoutId="logo-transition" className="font-display inline-block">
+                      Paperie<span className="text-accent font-sans font-bold">.</span>by V
+                    </motion.span>
                   ) : (
                     items[index].word
                   )}
